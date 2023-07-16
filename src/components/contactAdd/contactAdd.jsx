@@ -25,6 +25,7 @@ class ContactAdd extends Component {
     this.props.addContact(this.state);
     this.setState({ ...INITIAL_STATE });
   };
+
   render() {
     return (
       <div>

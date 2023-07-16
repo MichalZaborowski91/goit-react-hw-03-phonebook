@@ -32,7 +32,15 @@ class Phonebook extends Component {
       return { contacts: updatedContacts };
     });
   };
-
+  componentDidMount() {
+    const storedContacts = localStorage.getItem('contacts');
+    if (storedContacts) {
+      this.setState({ contacts: JSON.parse(storedContacts) });
+    }
+  }
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
   render() {
     return (
       <div>
